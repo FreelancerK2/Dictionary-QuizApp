@@ -1,7 +1,0 @@
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\bin\Debug\Dictionary.exe.config
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\bin\Debug\Dictionary.exe
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\bin\Debug\Dictionary.pdb
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\obj\Debug\Dictionary.csproj.AssemblyReference.cache
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\obj\Debug\Dictionary.csproj.CoreCompileInputs.cache
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\obj\Debug\Dictionary.exe
-C:\Users\DELL\OneDrive\Documents\Visual Studio 2022\MyFirstClass\Dictionary\obj\Debug\Dictionary.pdb
