@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static QuizApp.QuizManager;
 
 namespace QuizApp
 {
@@ -108,5 +109,6 @@ namespace QuizApp
             QuizManager.PressAnyKeyToContinue();
             Console.Clear();
         }
+
     }
 }

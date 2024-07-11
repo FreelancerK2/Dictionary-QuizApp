@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Dictionary
 {
@@ -10,22 +11,11 @@ namespace Dictionary
     {
         private List<LanguageDictionary> dictionaries = new List<LanguageDictionary>();
 
-        public enum Option
-        {
-            CREATE = 1,
-            ADDWORD,
-            REPLACE,
-            DELETEWORD,
-            DELETDICTIONARY,
-            SEARCH,
-            VIEW,
-            EXIT = 0
-        }
+        public enum Option { CREATE = 1, ADDWORD, REPLACE, DELETEWORD, DELETDICTIONARY, SEARCH, VIEW, EXIT = 0 }
         public void DisplayMenu()
         {
             while (true)
             {
-                Console.Write("Select an option: ");
                 int choice = LanguageDictionary.IntegerInput("\nDictionary Application Menu:\n1. Create a dictionary\n2. Add a word and its translation\n3. Replace a word or its translation\n4. Delete a word or a translation\n5. Delete dictionary\n6. Search for translation of a word\n7. View all word\n0. Exit\nSelect an option: ");
 
                 try
@@ -96,6 +86,13 @@ namespace Dictionary
                     Console.Clear();
                     string[] languages = dictionary.Type.Split('-');
                     string word = LanguageDictionary.InputString($"\nEnter the {languages[0]} word = ");
+                    if (dictionary.WordExists(word))
+                    {
+                        Console.WriteLine("\nWord already exist try another one!");
+                        LanguageDictionary.PressAnyKeyToContinue();
+                        Console.Clear();
+                        return;
+                    }
                     string translation = LanguageDictionary.InputString($"Enter the {languages[1]} word = ");
                     dictionary.AddWord(word, translation);
                     Console.WriteLine("\nWord and translation added.");
@@ -197,7 +194,8 @@ namespace Dictionary
                         }
                     }
                     var translations = dictionary.SearchTranslation(word);
-                    Console.WriteLine($"\nTranslations for '{word}': {string.Join(", ", translations)}");
+                    Console.WriteLine($"{languages[0]} -> {languages[1]}");
+                    Console.WriteLine($"\n  {word} -> {string.Join(", ", translations)}");
 
                 } while (LanguageDictionary.AskQuestion());
                 Console.Clear();
